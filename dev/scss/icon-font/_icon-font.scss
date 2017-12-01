@@ -1,0 +1,305 @@
+@font-face {
+	font-family: "babel-font";
+	src: url('../fonts/babel-font.eot');
+	src: url('../fonts/babel-font.eot?#iefix') format('eot'),
+		//url('../fonts/babel-font.woff2') format('woff2'),
+		url('../fonts/babel-font.woff') format('woff'),
+		url('../fonts/babel-font.ttf') format('truetype'),
+		url('../fonts/babel-font.svg#babel-font') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin babel-icon($content:'') {
+	font-family: "babel-font";
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	font-size: inherit;
+	line-height: 1;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+
+	&:before {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		content: $content;
+		font-family: "babel-font";
+		font-size: inherit;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		line-height: 1;
+		speak: none;
+		text-transform: none;
+	}
+
+}
+
+//=======
+// VARS
+//=======
+
+$babel-icon-arrow-down: '\e900';
+
+$babel-icon-arrow-up: '\e901';
+
+$babel-icon-barcelona: '\e902';
+
+$babel-icon-casablanca: '\e903';
+
+$babel-icon-go: '\e904';
+
+$babel-icon-instagram: '\e905';
+
+$babel-icon-linkedin: '\e906';
+
+$babel-icon-lisboa: '\e907';
+
+$babel-icon-londres: '\e908';
+
+$babel-icon-madrid: '\e909';
+
+$babel-icon-mail: '\e90a';
+
+$babel-icon-mexico: '\e90b';
+
+$babel-icon-phone: '\e90c';
+
+$babel-icon-play: '\e90d';
+
+$babel-icon-sevilla: '\e90e';
+
+$babel-icon-twitter: '\e90f';
+
+$babel-icon-youtube: '\e910';
+
+$babel-icon-queretaro: '\e911';
+
+
+//==========
+// CLASSES
+//==========
+// .babel-icon-arrow-down {
+// 	content: babel-icon(arrow-down);
+// }
+// .babel-icon-arrow-up {
+// 	content: babel-icon(arrow-up);
+// }
+// .babel-icon-barcelona {
+// 	content: babel-icon(barcelona);
+// }
+// .babel-icon-casablanca {
+// 	content: babel-icon(casablanca);
+// }
+// .babel-icon-go {
+// 	content: babel-icon(go);
+// }
+// .babel-icon-instagram {
+// 	content: babel-icon(instagram);
+// }
+// .babel-icon-linkedin {
+// 	content: babel-icon(linkedin);
+// }
+// .babel-icon-lisboa {
+// 	content: babel-icon(lisboa);
+// }
+// .babel-icon-londres {
+// 	content: babel-icon(londres);
+// }
+// .babel-icon-madrid {
+// 	content: babel-icon(madrid);
+// }
+// .babel-icon-mexico {
+// 	content: babel-icon(mexico);
+// }
+// .babel-icon-phone {
+// 	content: babel-icon(phone);
+// }
+// .babel-icon-play {
+// 	content: babel-icon(play);
+// }
+// .babel-icon-sevilla {
+// 	content: babel-icon(sevilla);
+// }
+// .babel-icon-twitter {
+// 	content: babel-icon(twitter);
+// }
+// .babel-icon-youtube {
+// 	content: babel-icon(youtube);
+// }
+// 
+
+
+[class^="ibbc-icon-"]{
+	@include babel-icon();
+}
+
+.ibbc-icon {
+	//@include babel-icon();
+
+	&--lg{
+		font-size: 1.33333333em !important;
+		line-height: 0.75em;
+		vertical-align: -15%;
+	}
+
+	// {% for key, val in sizes -%}
+	// &--{{val}}x { font-size: {{val}}em; }
+	// {% endfor %}
+	&--2x { font-size: 2em !important; }
+	&--3x { font-size: 3em !important; }
+	&--4x { font-size: 4em !important; }
+	&--5x { font-size: 5em !important; }
+
+	
+	// icon: arrow-down
+	&-arrow-down:before { content: $babel-icon-arrow-down }
+
+	
+	// icon: arrow-up
+	&-arrow-up:before { content: $babel-icon-arrow-up }
+
+	
+	// icon: barcelona
+	&-barcelona:before { content: $babel-icon-barcelona }
+
+	
+	// icon: casablanca
+	&-casablanca:before { content: $babel-icon-casablanca }
+
+	
+	// icon: go
+	&-go:before { content: $babel-icon-go }
+
+	
+	// icon: instagram
+	&-instagram:before { content: $babel-icon-instagram }
+
+	
+	// icon: linkedin
+	&-linkedin:before { content: $babel-icon-linkedin }
+
+	
+	// icon: lisboa
+	&-lisboa:before { content: $babel-icon-lisboa }
+
+	
+	// icon: londres
+	&-londres:before { content: $babel-icon-londres }
+
+	
+	// icon: madrid
+	&-madrid:before { content: $babel-icon-madrid }
+
+
+    // icon: queretaro
+	&-queretaro:before { content: $babel-icon-queretaro}
+
+	// icon: mail
+	&-mail:before { content: $babel-icon-mail }
+
+	
+	// icon: mexico
+	&-mexico:before { content: $babel-icon-mexico }
+
+	
+	// icon: phone
+	&-phone:before { content: $babel-icon-phone }
+
+	
+	// icon: play
+	&-play:before { content: $babel-icon-play }
+
+	
+	// icon: sevilla
+	&-sevilla:before { content: $babel-icon-sevilla }
+
+	
+	// icon: twitter
+	&-twitter:before { content: $babel-icon-twitter }
+
+	
+	// icon: youtube
+	&-youtube:before { content: $babel-icon-youtube }
+
+	
+}
+
+
+// %babel-icon {
+// 	@include babel-icon-styles;
+// }
+
+
+// @function babel-icon-char($filename) {
+// 	$char: "";
+// 
+// 	@if $filename == arrow-down {
+// 		$char: "\B001";
+// 	}
+// 	@if $filename == arrow-up {
+// 		$char: "\B002";
+// 	}
+// 	@if $filename == barcelona {
+// 		$char: "\B003";
+// 	}
+// 	@if $filename == casablanca {
+// 		$char: "\B004";
+// 	}
+// 	@if $filename == go {
+// 		$char: "\B005";
+// 	}
+// 	@if $filename == instagram {
+// 		$char: "\B006";
+// 	}
+// 	@if $filename == linkedin {
+// 		$char: "\B007";
+// 	}
+// 	@if $filename == lisboa {
+// 		$char: "\B008";
+// 	}
+// 	@if $filename == londres {
+// 		$char: "\B009";
+// 	}
+// 	@if $filename == madrid {
+// 		$char: "\B00A";
+// 	}
+// 	@if $filename == mexico {
+// 		$char: "\B00B";
+// 	}
+// 	@if $filename == phone {
+// 		$char: "\B00C";
+// 	}
+// 	@if $filename == play {
+// 		$char: "\B00D";
+// 	}
+// 	@if $filename == sevilla {
+// 		$char: "\B00E";
+// 	}
+// 	@if $filename == twitter {
+// 		$char: "\B00F";
+// 	}
+// 	@if $filename == youtube {
+// 		$char: "\B010";
+// 	}
+// 	@if $filename == queretaro {
+// 		$char: "\B011";
+// 	}
+
+// 	@return $char;
+// }
+
+// @mixin babel-icon($filename, $insert: before, $extend: true) {
+// 	&:#{$insert} {
+// 		@if $extend {
+// 			@extend %babel-icon;
+// 		} @else {
+// 			@include babel-icon-styles;
+// 		}
+// 		content: babel-icon-char($filename);
+// 	}
+// }

@@ -1,0 +1,68 @@
+.partners {
+    margin-top: 32px;
+    z-index: 3;
+    position: relative;
+    opacity: 0;
+    @include mq($from: tablet) {
+        margin-top: 100px;
+        display: block;
+        clear: both;
+    }
+    @include mq($from: extralarge) {
+        margin-top: 205px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding-bottom: 32px;
+        color: palette(white, base);
+        font-family: $ff-bold;
+    }
+    &__logo-container {
+        padding: 0 8px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        @include mq($from: tablet) {
+            padding: 0 16px;
+            flex: 1 1 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1 1 auto;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        @include mq($from: desktop_wrap) {
+            flex-wrap: initial
+        }
+    }
+    &__logo {
+        margin: 8px;
+        width: calc(50% - 16px);
+        @include mq($from: tablet) {
+            margin: 0;
+            margin-right: 16px;
+            width: auto;
+        }
+        &:last-child {
+            @include mq($from: tablet) {
+                margin-right: 0;
+            }
+        }
+        img {
+            max-width: 120px;
+            width: auto;
+            margin: 0 auto;
+            @include mq($from: tablet) {
+                max-width: 140px;
+                margin: 0 auto;
+            }
+        }
+    }
+}

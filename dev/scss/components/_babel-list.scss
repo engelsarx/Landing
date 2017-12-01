@@ -1,0 +1,131 @@
+.babel-list {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  flex-direction: row;
+  justify-content: center;
+  @include mq($from: tablet){
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 0;
+  }
+
+  &__item {
+    margin: 4px 0;
+    &:first-child {
+      &:after {
+        content: '\00a0 | \00a0';
+      }
+    }
+    &:last-child {
+      @include mq($from: tablet){
+        margin-left: auto;
+      }
+    }
+    &--menu {
+      @include mq($from: desktop){
+        &:last-child {
+            margin: 0;
+        }
+      }
+      &.active {
+        a {
+          color: palette(black, base);
+          border-bottom: 0 !important;
+          text-shadow: 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base);
+          .slider {
+              &:before {
+                  left: 0;
+                  width: 100%;
+              }
+          }
+        }
+      }
+      a {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        color: palette(gray, dark);
+        border-bottom: 0 !important;
+        padding: 0;
+        line-height: 36px;
+        font-family: $ff-regular;
+        transition: all ease 200ms;
+        text-shadow: 0px 0px 0 transparent, 0px 0px 0 transparent, 0px 0px 0 transparent, 0px 0px 0 transparent, 0px 0px 0 transparent;
+        outline: none;
+        .slider {
+          position: absolute;
+          display:block;
+          left: 0;
+          bottom: 0;
+          margin:0 auto;
+          height: 2px;
+          width: 100%;
+          transition: all 0.2s ease;
+          overflow: hidden;
+          &:before {
+              content: '';
+              display: block;
+              background-color: $primary-color;
+              height: 3px;
+              width: 0;
+              position: absolute;
+              right: 0;
+              transition: all 200ms ease;
+          }
+      }
+      &:hover {
+          .slider {
+              &:before {
+                  width: 100%;
+                  left:0;
+              }
+          }
+      }
+      &:hover,
+      &.active {
+          color: palette(black, base);
+          border-bottom: 0 !important;
+          text-shadow: 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base), 0px 0px 0 palette(black, base);
+          .slider {
+              &:before {
+                  left: 0;
+                  width: 100%;
+              }
+          }
+      }
+      }
+      &:last-child {
+        @include mq($from: tablet){
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__link {
+    color: $secondary-color;
+    text-decoration: none;
+    border-bottom: 1px solid;
+    transition: all ease 400ms;
+    &:hover {
+      color: palette(gray, dark);
+    }
+  }
+
+  &__figure {
+    max-width: 8rem;
+    display: none;
+
+
+    > img {
+
+    }
+    @include mq($from: tablet){
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.questions {
+    position: relative;
+    z-index: 3;
+    margin-top: -120px;
+    h1, h2, h3, h4, h5, h6 {
+        color: palette(white, base);
+        margin-bottom: 16px;
+    }
+    @include mq($from: desktop){
+        margin-top: -264px;
+        padding-bottom: 6%;
+      }
+      @include mq($from: extralarge){
+        padding-bottom: 6%;
+      }
+      @include mq($from: desktop_max_width){
+        padding-bottom: 4%;
+      }
+    &__card-container {
+        cursor: pointer;
+        height: auto;
+        perspective: 600;
+        position: relative;
+        margin-bottom: 16px;
+        @include mq($from: tablet){
+            height: 350px;
+          }
+        @include mq($from: desktop){
+            height: 298px;
+          }
+    }
+    &__card {
+        @extend .block;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.4s ease-in-out;
+        width: 100%;
+        pointer-events: none;
+        @include mq($from: desktop){
+            position: absolute;
+          }
+        @include mq($from: desktop){
+            pointer-events: all;
+          }
+        &:hover {
+            transform: rotateY(180deg);
+          }
+        &--front,
+        &--back {
+        backface-visibility: hidden;
+        border-radius: 5px;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 45px 28px;
+            img {
+                max-width: 70px;
+                margin: 0 auto 24px auto;
+            }
+            @include mq($from: tablet){
+                position: absolute;
+              }
+        }
+        &--front {
+            position: relative;
+            padding: 0;
+            display: none;
+            @include mq($from: desktop){
+                display: block;
+              }
+        }
+        &--back {
+            background-color: palette(white, base);
+            transform: rotateY(0deg);
+            padding: 0px;
+            @include mq($from: tablet){
+                padding: 20px;
+              }
+            @include mq($from: desktop){
+                transform: rotateY(-180deg);
+                padding: 20px;
+                h3 {
+                    display: none;
+                }
+              }
+        }
+        h3 {
+            color: palette(gray, dark);
+            font-family: $ff-manus;
+            font-size: 30px;
+            line-height: 30px;
+            @include mq($from: desktop){
+                font-size: 34px;
+                line-height: 34px;
+              }
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0;
+        }
+        i {
+            color: $primary-color;
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        .front-container {
+            width: 100%;
+            position: relative;
+            top: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            @include mq($from: tablet){
+                position: absolute;
+                padding: 45px 28px;
+              }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+/***********
+CARRUSEL
+************/
+
+.carrusel {
+    position: relative;
+    z-index: 1;    
+    .carrusel-inicio {
+        position: initial;
+        margin-bottom: 16px;
+        img {
+            width: 80%;
+        }
+    }
+}
+.owl-carousel .owl-stage-outer {
+    &.dragging {
+        overflow: visible !important;
+        &:before {
+            display: block;
+            content: '';
+            height: 100%;
+            width: 80px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+        &:after {
+            display: block;
+            content: '';
+            height: 100%;
+            width: 80px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 2;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        }
+
+    }
+}
+
+.owl-carousel .owl-item {
+        //opacity: 0;
+        //visibility: hidden;
+    transition: all ease 200ms;    
+    &.active {
+        //opacity: 1;
+        //visibility: visible;
+        //display: block;
+    }
+    .item{
+        width: calc(100% - 16px);
+        margin: 0 auto;
+    }
+}
+.carrusel .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: 151px;
+    padding: 0 15px;
+    transition: all ease 200ms;
+    z-index: 2;
+}
+
+.carrusel .owl-nav .owl-prev,
+.carrusel .owl-nav .owl-next {
+    position: absolute;
+    z-index: 1;
+    color: $primary-color;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 40px;
+    height: 40px;
+    width: 40px;
+    transition: all ease 200ms;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 rgba(71,100,128,0.17);
+    &.disabled {
+        display: none;
+    }
+}
+
+.carrusel .owl-nav .owl-prev {
+    left: -12px;
+}
+
+.carrusel .owl-nav .owl-next {
+    right: -12px;
+}
+
+.carrusel .owl-nav .owl-prev:hover,
+.carrusel .owl-nav .owl-next:hover {
+    color: $secondary-color;
+    text-shadow: none;
+}
+
+.carrusel .owl-dots {
+    text-align: center;
+}
+
+.carrusel .owl-dots .owl-dot{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 4px;
+    background-color: palette(gray, light);
+    transition: all ease .3s;
+    border-radius: 50%;
+}
+
+.carrusel .owl-dots .owl-dot:hover {
+}
+
+.carrusel .owl-dots .owl-dot.active {
+    background-color: $primary-color;
+}

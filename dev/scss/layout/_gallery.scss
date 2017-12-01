@@ -1,0 +1,177 @@
+.gallery {
+    padding: 56px 0;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+    display: none;
+    //overflow: hidden;
+    @include mq($from: tablet){
+        padding-top: 100px;
+        min-height: 800px;
+        display: block;
+      }
+    @include mq($from: desktop){
+        padding-top: 10%;
+        padding-bottom: 6%;
+      }
+      @include mq($from: extralarge){
+        padding-top: 8%;
+        padding-bottom: 10%;
+      }
+      @include mq($from: desktop_max_width){
+        padding-bottom: 2%;
+      }
+      .gallery-sizer,
+      .gallery-item {
+        width: calc(100% - 16px);
+        @include mq($from: tablet){
+            width: calc(50% - 16px);
+      }
+        @include mq($from: desktop){
+            width: calc(25% - 16px);
+      }
+        @include mq($from: extralarge){
+            width: calc(20% - 16px);
+        }
+      }
+      .gutter-sizer {
+        width: 16px;
+      }
+      
+      &__card--width2 { width:  40%;  }
+      &__card--width3 { width:  20%; }
+      
+      &__card--height2 { height: auto !important; }
+      &__card--height3 { height: auto !important; }
+      &__card--height4 { height: auto !important; }
+    &__card {
+        @extend .block;
+        //max-width: 648px;
+        border-radius: 0;
+        background-color: transparent;
+        box-shadow: none;
+        opacity: 0;
+        padding: 0;
+        pointer-events: auto;
+        //overflow: hidden;
+        display: inline-block;
+        position: absolute;
+        margin: 8px;
+        height: auto;
+        width: calc(100% - 16px);
+        transition-duration: .7s;
+        //transition-property: none!important;
+        //box-shadow: 9px 7px 20px 0px rgba(134, 134, 134, 0.2);
+        @include mq($from: tablet){
+            width: calc(50% - 16px);
+        }
+        @include mq($from: desktop){
+            margin: 0 0 16px 0;
+            width: calc(25% - 16px);
+        }
+        @include mq($from: extralarge){
+            width: calc(20% - 16px);
+        }
+        img {
+            width: 100%;
+            max-width: 648px;
+            @include mq($from: extralarge){
+            }
+        }
+        &:nth-child(2) {
+            left: 600%;
+        }
+        &:nth-child(3) {
+            left: 600%;
+            animation-delay: 1s;
+            transition-duration: 3s;
+            @include mq($from: tablet){
+                  width: calc(50% - 16px);
+            }
+              @include mq($from: desktop){
+                margin-bottom: 200px;
+                  width: calc(25% - 16px);
+              }
+              @include mq($from: extralarge){
+                width: calc(20% - 16px);
+                margin-bottom: 200px;
+            }
+        }
+        &:nth-child(4) {
+            left: 600%;
+            animation-delay: 3s;
+            transition-duration: 3s;
+            @include mq($from: tablet){
+                width: calc(50% - 16px);
+          }
+            @include mq($from: desktop){
+                margin-top: 54px;
+                width: calc(25% - 16px);
+            }
+            @include mq($from: extralarge){
+                width: calc(40% - 16px);
+                margin-top: 54px;
+            }
+        }
+        &:nth-child(5) {
+            left: 600%;
+            animation-delay: 4s;
+            transition-duration: 3s;
+            @include mq($from: tablet){
+                width: calc(50% - 16px);
+          }
+            @include mq($from: desktop){
+                margin-top: 150px;
+                width: calc(25% - 16px);
+            }
+            @include mq($from: extralarge){
+                margin-top: 150px;
+                width: calc(20% - 16px);
+            }
+        }
+        &:nth-child(6) {
+            left: 600%;
+            animation-delay: 5s;
+            transition-duration: 3s;
+            @include mq($from: tablet){
+                width: calc(50% - 16px);
+          }
+            @include mq($from: desktop){
+                margin-top: 394px;
+                width: calc(25% - 16px);
+            }
+            @include mq($from: extralarge){
+                margin-top: 394px;
+                width: calc(20% - 16px);
+            }
+        }
+        &:nth-child(7) {
+            left: 600%;
+            animation-delay: 6s;
+            transition-duration: 3s;
+            @include mq($from: tablet){
+                width: calc(50% - 16px);
+          }
+            @include mq($from: desktop){
+                width: calc(25% - 16px);
+            }
+            @include mq($from: extralarge){
+                width: calc(18% - 16px);
+            }
+        }
+        &:nth-child(8) {
+            left: 600%;
+            animation-delay: 7s;
+            transition-duration: 3s;
+            @include mq($from: tablet){
+                width: calc(50% - 16px);
+          }
+            @include mq($from: desktop){
+                width: calc(25% - 16px);
+            }
+            @include mq($from: extralarge){
+                width: calc(18% - 16px);
+            }
+        }
+    }
+}

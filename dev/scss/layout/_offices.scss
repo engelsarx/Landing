@@ -1,0 +1,326 @@
+.offices {
+    padding-top: 60px;
+    z-index: 3;
+    position: relative;
+    opacity: 0;
+    @include mq($from: tablet) {
+        margin-top: 150px;
+        padding-top: 0;
+        h2 {
+            font-size: 36px;
+            padding-bottom: 56px;
+        }
+    }
+    @include mq($from: desktop) {
+        margin-top: 336px;
+        padding-top: 0;
+    }
+    @include mq($from: extralarge) {
+        padding-top: 2%;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-bottom: 32px;
+        font-family: $ff-bold;
+    }
+    .row {
+        @include mq($from: tablet) {
+            position: relative;
+        }
+    }
+    &__block-container {
+        padding-top: 400px;
+        @include mq($from: tablet) {
+            position: absolute;
+            top: -40px;
+            padding-top: 0;
+        }
+        @include mq($from: desktop) {
+            top: -80px;
+        }
+    }
+    &__block {
+        @extend .block;
+        @include mq($from: tablet) {
+            padding: 36px;
+        }
+        h3 {
+            margin-bottom: 16px;
+        }
+        .button-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            @include mq($from: tablet) {
+                overflow-x: visible;
+                white-space: normal;
+            }
+            button {
+                display: inline-block;
+                width: auto;
+                text-align: left;
+                color: $primary-color;
+                font-family: $ff-bold;
+                padding: .4rem .5rem;
+                transition: color .2s ease, transform .4s ease;
+                overflow: visible;
+                @include mq($from: tablet) {
+                    width: 100%;
+                    font-size: 14px;
+                }
+                i {
+                    display: inline-block;
+                    width: 40px;
+                    transition: color .2s ease, transform .2s ease-out;
+                    font-size: 32px;
+                    border-bottom: 1px solid;
+                    margin-right: 16px;
+                    position: relative;
+                    text-align:center;
+                    &[class^=ibbc-icon-]:after {
+                        content: "";
+                        display: inline-block;
+                        width: 40px;
+                        height: 1px;
+                        background-color: currentColor;
+                        position: absolute;
+                        right: 0;
+                        bottom: -1px;
+                        transition: transform .15s ease-out;
+                    }
+                }
+                span {
+                    display: inline-block;
+                    transition: transform .2s ease-out;
+                }
+                &.active, &:hover, &:focus {
+                    @include mq($from: tablet) {
+                        color: palette(gray, dark);
+                    }
+                    i {
+                        color: palette(gray, dark);
+                        &[class^=ibbc-icon-]:after {
+                            transform: translateX(-15px);
+                        }
+                    }
+                    span {
+                        color: $title-color;
+                    }
+                }
+            }
+        }
+    }
+    &__map-container {
+        position: relative;
+        width: 100%;
+        height: 450px;
+        transform: skew(0deg, 11.5deg);
+        z-index: -1;
+        overflow: hidden;
+        position: absolute;
+        top: 150px;
+        @include mq($from: tablet) {
+            height: 630px;
+            position: relative;
+            top: auto;
+        }
+        &:before {
+            //content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: $primary-color;
+            background-image: url(../images/office-people.png);
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+    }
+    &__map {
+        position: absolute !important;
+        height: 750px;
+        width: 100%;
+        transform: skew(0deg, -11.5deg);
+        top: -50px;
+        @include mq($from: tablet) {
+            top: -200px;
+            min-height: 1050px;
+        }
+        &:before {
+            //content: "";
+            display: block;
+            background-color: #fefefe;
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            transform: skew(0deg, 11.5deg);
+            z-index: 1;
+            top: -100px;
+            height: 150px;
+            @include mq($from: tablet) {
+                height: 300px;
+                top: -150px;
+            }
+        }
+        &:after {
+            //content: "";
+            display: block;
+            background-color: #fefefe;
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            transform: skew(0deg, 11.5deg);
+            z-index: 1;
+            bottom: -164px;
+            @include mq($from: tablet) {
+                bottom: -144px;
+            }
+        }
+    }
+    &__reference {
+        width: 80%;
+        height: 192px;
+        background-color: palette(white, base);
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto 0 auto;
+        text-align: center;
+        padding: 28px;
+        @include mq($from: tablet) {
+            width: 192px;
+            margin: -100px auto 0 auto;
+        }
+        p {
+            font-size: 14px;
+            line-height: 18px;
+            span {
+                font-family: $ff-bold;
+            }
+        }
+        a {
+            font-size: 40px;
+            line-height: 1;
+            i {
+                color: $primary-color;
+            }
+        }
+    }
+    &__address {
+        @extend .block;
+        position: absolute;
+        left: 50%;
+        top: 200px;
+        transform: translateX(-50%);
+        padding: 0;
+        width: 90%;
+        box-shadow: 0 2px 15px 0 rgba(97, 97, 97, 0.5);
+        @include mq($from: tablet) {
+            width: 315px;
+            left: 32px;
+            transform: translateX(0);
+        }
+        @include mq($from: desktop) {
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .btn.close-address {
+            float: right;
+            padding: 8px;
+            i {
+                color: palette(gray, base);
+                font-size: 24px;
+                line-height: 1;
+                font-style: normal;
+            }
+            &:hover {
+                i {
+                    color: $primary-color;
+                }
+            }
+        }
+        &.no-visible {
+            display: none;
+        }
+        .photo-container {
+            background-color: palette(white, base);
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            top: 20px;
+            left: 10px;
+            pointer-events: none;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 2px 15px 0 rgba(204, 204, 204, 0.47);
+            @include mq($from: tablet) {
+                left: -20px;
+                top: 20px;
+            }
+            img {
+                width: auto;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        h4,
+        p {
+            font-size: 14px;
+            text-align: left;
+            margin: 0;
+        }
+        h4 {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .office {
+            padding: 24px 16px 16px 100px;
+            @include mq($from: tablet) {
+                padding: 24px 16px 16px 76px;
+            }
+        }
+        .actions {
+            background-color: palette(white, dark);
+            width: 100%;
+            height: 52px;
+            border-radius: 0 0 5px 5px;
+            a {
+                display: inline-block;
+                float: left;
+                color: palette(gray, dark);
+                text-decoration: none;
+                font-size: 14px;
+                width: 50%;
+                border-top: 1px solid palette(gray, light);
+                transition: all ease 400ms;
+                i,
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                    line-height: 51px;
+                    font-weight: bold;
+                }
+                i {
+                    margin-right: 8px;
+                }
+                &:last-child {
+                    border-left: 1px solid palette(gray, light);
+                    &:hover {
+                        border-radius: 0 0 5px 0;
+                    }
+                }
+                &:hover {
+                    background-color: $primary-color;
+                    color: palette(white, base);
+                    border-radius: 0 0 0 5px;
+                }
+            }
+        }
+    }
+}

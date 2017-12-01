@@ -1,0 +1,285 @@
+.site-container {
+    padding-top: 95px;
+    position: relative;
+    overflow: hidden;
+    h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        font-family: $ff-bold;
+    }
+    .cursive {
+        font-family: $ff-manus;
+    }
+    .block {
+        border-radius: 5px;
+        background-color: palette(white, base);
+        box-shadow: 0 2px 15px 0 rgba(204,204,204,0.47);
+        padding: 32px;
+        text-align: center;
+
+    }
+    .line-container {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        display: none;
+        margin-top: -160px;
+        left: calc(50% - 85px);
+        transform: translateX(-50%);
+        max-width: 1272px;
+        top: 100vh;
+        //left: -50px;
+        margin-left: auto;
+        margin-right: auto;
+        pointer-events: none;
+        @include mq($from: desktop_wrap){
+            display: block;
+          }
+        #circle {
+                fill: $tertiary-color;
+          }
+          #circle2 {
+            fill: $primary-darken-color;
+      }
+          
+          #mySVG {
+            width: 1305px;
+            height: 100%;
+          }
+          
+          .st0 {
+            fill: none;
+            stroke-dashoffset: 10px;
+            stroke: palette(white, dark);
+            stroke-width: 4;
+            stroke-miterlimit: 10;
+            stroke-dasharray: 10,20;
+            stroke-linecap: round;
+            padding-bottom: 60px;
+          }
+          
+          .mask-style {
+            stroke: palette(white, base);
+            stroke-width: 7;
+          }
+          &--svg {
+              position: absolute;
+              z-index: 3;
+              width: 100%;
+              height: auto;
+              display: none;
+              margin-top: -150px;
+              left: calc(50% - 85px);
+              transform: translateX(-50%);
+              max-width: 1310px;
+              margin-left: auto;
+              margin-right: auto;
+              pointer-events: none;
+          }
+    }
+    @import 'hero';
+    @import 'video';
+    @import 'questions';
+    @import 'gallery';
+    @import 'technologies';
+    @import 'partners';
+    @import 'offices';
+    @import 'contact';
+}
+
+.clearfix {
+    &:before {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+//tooltip
+
+.tooltip-inner {
+    padding: 16px;
+    color: palette(black, base) !important;
+    font-family: $ff-manus;
+    background-color: palette(white, base) !important;
+    border-radius: 0;
+    font-size: 25px;
+}
+
+
+.tooltip {
+    &.top {
+    //top: -95px !important;
+    //left: 636px !important;
+    .tooltip-arrow {
+        border-top-color: palette(white, base) !important;
+        }
+    }
+}
+
+.mouse-tooltip {
+    position: absolute;
+    padding: 16px;
+    color: palette(black, base) !important;
+    font-family: $ff-manus;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 25px;
+    border-radius: 6px;
+    line-height: 1em;
+    max-width: 300px;
+    text-align: center;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease 700ms;
+    pointer-events: none;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.point {
+    cursor: help;
+    pointer-events: auto;
+}
+
+#circle2,
+.center-point {
+    pointer-events: none;
+}
+
+.modal {
+    &__video {
+        .modal-dialog {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            .modal-content {
+                background-color: transparent;
+                box-shadow: none;
+                height: 100%;
+            }
+            .modal-body {
+                padding: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        button {
+            float: right;
+            padding: 8px;
+            i {
+                color: palette(white, base);
+                font-size: 40px;
+                line-height: 1;
+                font-style: normal;
+            }
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/* pulse in SVG */
+.pulse-svg{
+	overflow: visible;
+	.first-circle{
+		fill: palette(white, base);
+		transform-origin: center center;
+		animation: pulse-me 2s linear infinite;
+	}
+	.second-circle{
+    fill: $primary-color;
+		@extend .first-circle;
+		animation-delay: 0.5s;
+	}
+	.third-circle{
+    fill: palette(white, base);
+		@extend .first-circle;
+		animation-delay: 0.6s;
+	}
+}
+
+@keyframes pulse-me{
+	0%{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.5;
+	}
+	70%{
+		opacity: 0.1;
+	}
+	100%{
+		transform: scale(5);
+		opacity: 0;
+	}
+}
+
+@supports (-ms-ime-align:auto) {
+    .line-container {
+        display: none !important;
+    }
+    .site-container {
+        overflow: hidden;
+    }
+    .line-container--svg {
+        display: block !important;
+    }
+    .site-container .video__back::before {
+        z-index: -2;
+    }
+    .site-container .video__back:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $primary-color;
+        z-index: -1;
+        opacity: 0.8;
+    }
+    .site-container .technologies__back::before {
+        z-index: -2;
+    }
+    .site-container .technologies__back:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $primary-color;
+        z-index: -1;
+        opacity: 0.8;
+    }
+}
+@include mq($from: desktop_wrap){
+    @-moz-document url-prefix() {
+        .line-container {
+            display: none !important;
+        }
+        .line-container--svg {
+            display: block !important;
+        }
+    }
+}
+
+.fade-scale {
+    transform: scale(0);
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+  }
+  
+  .fade-scale.in {
+    opacity: 1;
+    transform: scale(1);
+  }

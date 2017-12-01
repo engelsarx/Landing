@@ -1,0 +1,83 @@
+<footer class="site-footer container">
+  <div class="row">
+    <a href="" class="btn site-footer__btn-top home">
+      <i class="ibbc-icon-arrow-up" aria-hidden="true"></i>
+    </a>
+    <div class="site-footer__wrapper">
+      <ul class="social-list">
+        <li class="social-list__item">
+          <a href="https://www.instagram.com/babel_grupo/" target="_blank" class="social-list__link social-list__link--instagram">
+            <i class="ibbc-icon-instagram"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a href="https://twitter.com/babelgrupo" target="_blank" class="social-list__link social-list__link--twitter">
+            <i class="ibbc-icon-twitter"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a href="https://es.linkedin.com/company/babel" target="_blank" class="social-list__link social-list__link--linkedin">
+            <i class="ibbc-icon-linkedin"></i>
+          </a>
+        </li>
+        <li class="social-list__item">
+          <a href="https://www.youtube.com/user/BABELgrupo" target="_blank" class="social-list__link social-list__link--youtube">
+            <i class="ibbc-icon-youtube"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="babel-list">
+        <li class="babel-list__item">
+          <a class="babel-list__link" href="http://babel.es/es" class="">babel.es</a>
+        </li>
+        <li class="babel-list__item">
+          <a class="babel-list__link" href="mailto:seleccion@babel.es" class="">seleccion@babel.es</a>
+        </li>
+        <li class="babel-list__item">
+          <figure class="babel-list__figure">
+            <img src="images/logo-babel.png" alt="Babel " width="104 " height="39 " />
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<div class="modal fade-scale modal__video" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn btn-icon close" data-dismiss="modal" aria-label="Close">
+            <i aria-hidden="true">×</i>
+        </button>
+        <iframe id="frameFalse" width="560" height="315" src="https://www.youtube.com/embed/Fll0cUt0imU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+        <iframe id="frameVideo" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var tiltSettings = [
+  {}];
+
+  function init() {
+    var idx = 0;
+    [].slice.call(document.querySelectorAll('div.tilter')).forEach(function(el, pos) { 
+      idx = pos%2 === 0 ? idx+1 : idx;
+      new TiltFx(el, tiltSettings[idx-1]);
+    });
+  }
+
+  // Preload all images.
+  imagesLoaded(document.querySelector('main'), function() {
+    document.body.classList.remove('loading');
+    init();
+  });
+
+  [].slice.call(document.querySelectorAll('a[href="#"]')).forEach(function(el) {
+				el.addEventListener('click', function(ev) { ev.preventDefault(); });
+			});
+ 
+
+})();
+</script>

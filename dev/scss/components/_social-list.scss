@@ -1,0 +1,54 @@
+.social-list {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mq($from: tablet){
+    flex: 0 0 40%;
+    justify-content: flex-start;
+  }
+
+  &--menu {
+    @include mq($from: tablet) {
+      flex: 0 0 auto;
+      justify-content: flex-start;
+      margin-left: 34px;
+    }
+  }
+
+  &__item {
+    margin-right: 1rem;
+    line-height: 1;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: $secondary-color;
+    line-height: 1;
+    font-size: 24px;
+    transition: all .2s ease;
+    &--instagram {
+      &:hover {
+        color: $instagram-color
+      }      
+    }
+    &--twitter {
+      &:hover {
+        color: $twitter-color
+      }
+    }
+    &--linkedin {
+      &:hover {
+        color: $linkedin-color
+      }      
+    }
+    &--youtube {
+      &:hover {
+        color: $youtube-color
+      }
+    }
+  }
+}

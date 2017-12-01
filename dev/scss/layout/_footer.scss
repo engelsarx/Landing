@@ -1,0 +1,46 @@
+.site-footer {
+  border-top: 0.0625rem solid palette(white, dark);
+  padding: 64px 16px 16px 16px;
+  position: relative;
+  @include mq($from: tablet){
+    padding: 2rem;
+  }
+  &__btn-top {
+    border: 1px solid palette(white, dark);
+    background-color: palette(white, base);
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: -31px;
+    text-align: center;
+    transform: translateX(-50%);
+    font-size: 32px;
+    line-height: 1;
+    i {
+      color: $primary-color;
+      line-height: 58px;
+    }
+    &:hover {
+      i {
+        color: $primary-darken-color;
+      }
+    }
+  }
+  &__wrapper {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq($from: tablet){
+      flex-wrap: nowrap;
+    }
+  }
+}

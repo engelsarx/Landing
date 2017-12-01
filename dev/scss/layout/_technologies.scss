@@ -1,0 +1,312 @@
+.technologies {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    opacity: 0;
+    .container {
+        display: none;
+        @include mq($from: desktop) {
+            display: block;
+        }
+        &--mobile {
+            display: block;
+            @include mq($from: desktop) {
+                display: none;
+            }
+            .technologies__card {
+                padding: 0;
+                position: relative;
+                &-container {
+                    height: auto;
+                    @include mq($from: tablet) {
+                        height: 250px;
+                    }
+                    &--more-mobile {
+                        height: 100px;
+                        margin-bottom: 16px;
+                        position: relative;
+                        img {
+                            position: absolute !important;
+                            width: 80%;
+                            left: 50% !important;
+                            top: 50% !important;
+                            transform: translate(-50%,-50%) !important;
+                        }
+                        .technologies__card--front {
+                            padding: 16px;
+                        }
+                    }
+                }
+                &--front {
+                    padding: 32px 16px 32px 16px;
+                    position: relative;
+                }
+                &--angular, &--office365 {
+                    padding: 0px 16px 32px 16px;
+                    p {
+                        padding-top: 0px !important;
+                    }
+                }
+                img {
+                    position: relative;
+                    left: auto;
+                    transform: none;
+                    top: auto;
+                    margin: 0 auto;
+                }
+                p {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                    transform: none;
+                    width: 100%;
+                    padding-top: 32px;
+                }
+            }
+        }
+    }
+    &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: skew(0deg, -11.5deg);
+        z-index: -1;
+        overflow: hidden;
+        top: 240px;
+        display: none;
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: $primary-color;
+            background-image: url(../images/franja2.jpg);
+            background-blend-mode: overlay;
+            background-size: cover;
+        }
+        @include mq($from: tablet) {
+            display: block;
+            top: 120px;
+        }
+        @include mq($from: desktop) {
+            top: 240px;
+        }
+    }
+    @include mq($from: tablet) {
+        height: 1600px;
+        padding-bottom: 250px;
+        margin-top: 5%;
+    }
+    @include mq($from: tablet_large) {
+        height: 450px;
+        padding-bottom: 250px;
+        margin-top: 10%;
+    }
+    @include mq($from: desktop_wrap) {
+        padding-top: 100px;
+        padding-bottom: initial;
+        max-height: none;
+        margin-top: 10%;
+    }
+    @include mq($from: desktop_wide) {
+        margin-top: 2%;
+    }
+    @include mq($from: extralarge) {
+        margin-top: 0 !important;
+    }
+    &:before {
+        //content: "";
+        display: block;
+        background-color: #fefefe;
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        transform: skew(0deg, -11.5deg);
+        z-index: -1;
+        top: -150px;
+    }
+    &:after {
+        //content: "";
+        display: block;
+        background-color: #fefefe;
+        position: absolute;
+        width: 100%;
+        height: 300px;
+        transform: skew(0deg, -11.5deg);
+        z-index: -1;
+        bottom: -60px;
+        height: 100px;
+        @include mq($from: tablet) {
+            height: 300px;
+            bottom: -175px;
+        }
+        @include mq($from: extralarge) {
+            height: 300px;
+            bottom: -150px;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding-bottom: 32px;
+    }
+    h2 {
+        width: 80%;
+        margin: 24px auto 0 auto;
+        @include mq($from: tablet) {
+            font-size: 36px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+    .flip-more-container {
+        position: relative;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        @include mq($from: tablet) {
+            height: 100%;
+            perspective: 600;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease-in-out;
+            pointer-events: none;
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            .technologies__flip-more {
+                transform: rotateX(0deg);
+            }
+        }
+    }
+    &__flip-more {
+        transform: rotateX(-90deg);
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: all 0.4s ease-in-out;
+    }
+    &__card-container {
+        cursor: pointer;
+        height: 208px;
+        perspective: 600;
+        position: relative;
+        margin-bottom: 16px;
+        @include mq($from: tablet) {
+            height: 400px;
+        }
+        @include mq($from: desktop) {
+            height: 208px;
+        }
+    }
+    &__card {
+        @extend .block;
+        height: 100%;
+        position: absolute;
+        transform-style: preserve-3d;
+        transition: all 0.4s ease-in-out;
+        width: 100%;
+        pointer-events: none;
+        @include mq($from: desktop) {
+            pointer-events: all;
+        }
+        &:hover {
+            transform: rotateY(180deg);
+        }
+        &--more-flip {
+            &:hover {
+                transform: rotateY(0);
+            }
+        }
+        &--front,
+        &--back {
+            backface-visibility: hidden;
+            border-radius: 5px;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 45px 28px;
+            img {
+                position: absolute;
+                width: 60%;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        &--back {
+            transform: rotateY(-180deg);
+            padding: 16px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0;
+            color: palette(white, base);
+            position: absolute;
+            width: calc(100% - 32px);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &--angular {
+            background-color: #A6120D;
+        }
+        &--luis {
+            background-color: #019682;
+        }
+        &--polymer {
+            background-color: #1B2655;
+        }
+        &--office365 {
+            background-color: #EB3D01;
+        }
+        &--safe {
+            background-color: #436A79;
+        }
+        &--iosandroid {
+            background-color: #A9B6BD;
+        }
+        &--mongodb {
+            background-color: #2D6F2F;
+        }
+        &--more-flip {
+            background-color: #D9421E;
+            .cursive {
+                font-family: $ff-manus;
+                font-size: 34px;
+                line-height: 34px;
+            }
+        }
+    }
+    .container {
+        position: relative;
+    }
+    &__flip-more {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        .last {
+            pointer-events: none;
+        }
+    }
+    .carrusel {
+        @include mq($from: desktop) {
+            display: none;
+        }
+    }
+}

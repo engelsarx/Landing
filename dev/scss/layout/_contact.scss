@@ -1,0 +1,104 @@
+.contact {
+    text-align: center;
+    padding-top: 32px;
+    padding-bottom: 48px;
+    opacity: 0;
+    &__goal {
+        width: 45px;
+        margin: 0 auto 120px auto;
+        display: none;
+        @include mq($from: desktop){
+            display: inline-block;
+            padding-top: 70px;
+            opacity: 0;
+        }
+        @include mq($from: extralarge){
+            padding-top: 55px;
+        }
+    }
+    &__links {
+        font-size: 16px !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            display: block;
+            background-color: $primary-color;
+            border-radius: 20px;
+            padding: 8px 16px;
+            color: palette(white);
+            margin-top: 16px;
+            &:first-child {
+                background-color: $tertiary-color;
+            }
+            i {
+                margin-right: 16px;
+                vertical-align: text-bottom;
+            }
+            @include mq($from: desktop){
+                display: inline-block;
+                background-color: transparent;
+                border-radius: 0;
+                padding: 0;
+                color: $primary-color;
+                margin-top: 0;
+                &:first-child {
+                    background-color: transparent;
+                }
+                i {
+                    display: none;
+                }
+                &:hover {
+                    color: $primary-darken-color;
+                }
+              }
+        }
+        @include mq($from: desktop){
+            display: block;
+        }
+    }
+    @include mq($from: tablet){
+        padding-top: 16px;
+        padding-bottom: 200px;
+        .row {
+            position: relative;
+        }
+        h2 {
+            font-size: 36px;
+            margin-top: 94px;
+        }
+      }
+      @include mq($from: desktop){
+        padding-top: 100px;
+        padding-bottom: 300px;
+      }
+    .cursive {
+        font-size: 45px;
+        @include mq($from: tablet){
+            display: block;
+            margin-top: 48px;
+          }
+    }
+    p {
+        font-size: 14px;
+        @include mq($from: tablet){
+            font-size: 18px;
+          }
+        a {
+            text-decoration: none;
+            font-family: $ff-bold;
+        }
+    }
+    &__image {
+        display: none;
+        @include mq($from: desktop){
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -300px;
+            img {
+                width: 358px;
+            }
+          }
+    }
+}

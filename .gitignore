@@ -1,0 +1,11 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+.DS_Store
+*sublime*
+.vscode/
+.sass-cache/
+node_modules/
+dist/
+css/
+dev/fonts/*.+(eot|svg|ttf|woff|woff2)

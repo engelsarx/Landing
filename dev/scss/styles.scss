@@ -1,0 +1,65 @@
+// Config
+// ------------
+@import 'config/functions';
+@import 'config/mixins';
+@import 'config/variables';
+@import 'config/mq';
+@import 'config/placeholders';
+@import 'config/utilities';
+@import 'config/fonts';
+// @import 'config/debug';
+
+
+// Icon font
+// -------------------------
+@import 'icon-font/icon-font';
+
+// Base
+// ------------
+@import 'base/normalize';
+@import 'base/basics';
+@import 'base/utils';
+
+// Lib
+// ------------
+@import 'lib/bootstrap/grid';
+@import 'lib/aos';
+
+// Layout
+// ------------
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+// Components
+// ------------
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/modal';
+@import 'components/social-list';
+@import 'components/babel-list';
+@import 'components/owl-carousel';
+@import 'components/carrusel';
+@import 'components/animate';
+@import 'components/tilt-effect';
+
+// Pages
+// ------------
+@import 'pages/basic-page';
+
+// Overrides
+// -------------------------
+// @import 'overrides/bootstrap';
+
+// Browsers hacks
+// -------------------------
+// @import 'browsers-hacks/safari-8';
+
+// Print
+// -------------------------
+// @import 'print/specific-styles';
+
+// Themes
+// ------------
+// @import 'themes/theme';
+// @import 'themes/admin';
